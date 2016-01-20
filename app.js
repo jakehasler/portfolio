@@ -24,6 +24,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.get('/my-story', function(req, res) {
+  res.redirect('https://medium.com/p/a404b953bc4b');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
