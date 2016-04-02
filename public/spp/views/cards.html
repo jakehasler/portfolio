@@ -1,0 +1,53 @@
+<md-content class="md-padding" layout-xs="column" layout="row" layout-align="center center">
+  <div flex-xs flex-gt-xs="80" layout="column">
+    <md-card>
+    <md-card-title>
+            <md-card-title-text>
+              <span class="md-subhead">Selected Verse:</span>
+              <span class="md-headline">{{ book }} {{ chapter }}:{{ verse }} </span>
+            </md-card-title-text>
+          </md-card-title>
+         
+          <div flex="100" flex-sm="100" flex-xs="100" layout="row" style="text-align: center;" >
+            <div id="loader" ng-hide="ready" style="margin: 0 auto 25px auto; width: 50px; height: auto;">
+              <img style="width: 100%" src="/images/loader.gif" alt="">
+            </div>
+          </div>
+          <md-content ng-show="ready" class="md-padding" layout="row" layout-wrap layout-align="center start" layout-xs="column">
+            <div flex="50" flex-sm="100" flex-xs="100" layout="column">
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                  <span class="md-headline">{{ v1 }}</span>
+                  <p>{{ ver1 }}</p>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+            </div>
+            <div flex="50" flex-sm="100" flex-xs="100" layout="column">
+              <md-card>
+                <md-card-title>
+                  <md-card-title-text>
+                  <span class="md-headline">{{ v2 }}</span>
+                  <p>{{ ver2 }}</p>
+                  </md-card-title-text>
+                </md-card-title>
+              </md-card>
+            </div>
+          </md-content>
+    </md-card>
+  </div>
+
+</md-content>
+
+<md-content class="md-padding" layout="row" layout-wrap layout-align="center center" layout-xs="column">
+    <div flex="100" flex-sm="100" flex-xs="100" layout="column" layout-align="center center">
+      <md-button href="/spp/#/"  class="md-primary md-raised" flex="100"  flex-gt-md="auto">
+      <h3 style="display: inline-block;">Compare Another Verse!</h3>
+      <md-button style="float: left;  background-color: #d6d6d6;" class="md-fab"> <ng-md-icon icon="arrow_back" style="fill: #646464;"></ng-md-icon></md-button>
+    </md-button>
+    </div>
+    <div flex="50" flex-sm="100" flex-xs="100" layout="column">
+      
+    </div>
+    </md-content>

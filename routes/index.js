@@ -4,9 +4,12 @@ var nodemailer = require('nodemailer');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { title: 'Jake Hasler' });
 });
 
+router.get('/spp', function(req, res, next) {
+  res.sendFile('./public/spp/index.html');
+});
 
 /* Send an Email */
 router.post('/send', function(req, res, next) {
