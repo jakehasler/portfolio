@@ -74,24 +74,16 @@ angular.module('sppApp')
     });
 
 
-    var url = 'http://getbible.net/json?passage=' + $scope.book + $scope.chapter + ':' + $scope.verse;
+    var url = 'http://getbible.net/json?callback=JSON_CALLBACK&passage=' + $scope.book + $scope.chapter + ':' + $scope.verse;
     console.log(url);
 
-    $http.get(url + '&v=' + v1).then(function success(res) {
-    	var verse = res.data.replace('(', '');
-    	verse = verse.replace(')', '');
-    	verse = verse.replace(/;/g, '');
-    	verse = JSON.parse(verse);
-    	$scope.ver1 = verse.book[0].chapter[$scope.verse].verse;
+    $http.jsonp(url + '&v=' + v1).success(function(res) {
+    	$scope.ver1 = res.book[0].chapter[$scope.verse].verse;
       $scope.ready = true;
     });
 
-    $http.get(url + '&v=' + v2).then(function success(res) {
-    	var verse = res.data.replace('(', '');
-    	verse = verse.replace(')', '');
-    	verse = verse.replace(/;/g, '');
-    	verse = JSON.parse(verse);
-    	$scope.ver2 = verse.book[0].chapter[$scope.verse].verse;
+    $http.jsonp(url + '&v=' + v2).success(function(res) {
+    	$scope.ver2 = res.book[0].chapter[$scope.verse].verse;
     });
 
     $scope.ready = false;
