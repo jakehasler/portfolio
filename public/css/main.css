@@ -145,6 +145,12 @@
 		text-transform: capitalize;
 	}
 
+	.jhbutton {
+		letter-spacing: 0.2em;
+	    text-transform: uppercase;
+	    font-family: "Source Sans Pro", Helvetica, sans-serif;
+	}
+
 		@media screen and (max-width: 1680px) {
 
 			body, input, select, textarea {
@@ -866,3 +872,5 @@
 		body.is-ie #wrapper {
 			height: 100%;
 		}
+
+

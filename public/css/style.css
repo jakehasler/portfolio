@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.jhbutton {
+	letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: "Source Sans Pro", Helvetica, sans-serif;
+}
