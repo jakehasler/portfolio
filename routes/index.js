@@ -1,11 +1,27 @@
 var express = require('express');
 var router = express.Router();
 var nodemailer = require('nodemailer');
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Jake Hasler' });
 });
+
+router.get('/resume', function(req, res, next) {
+	//var stream = fs.readStream('./public/files/JH-resume.pdf');
+	var fileName = 'JH-Resume.pdf';
+	// res.setHeader('Content-disposition', 'inline; filename="' + fileName + '"');
+	// res.setHeader('Content-type', 'application/pdf');
+	console.log(stream);
+	//stream.pipe(res);
+	res.writeHead(200, {
+		'Content-Type': 'application/pdf',
+		'Access-Control-Allow-Origin': '*',
+		'Content-Disposition': 'inline; filename=' + fileName
+	});
+	res.end('./public/files/JH-resume.pdf');
+})
 
 router.get('/spp', function(req, res, next) {
   res.sendFile('./public/spp/index.html');
